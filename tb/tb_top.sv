@@ -32,14 +32,12 @@ module tb_top;
         .DATA_WIDTH(DATA_WIDTH),
         .ADDR_WIDTH(ADDR_WIDTH)
     ) dut (
-        // Write domain
         .wr_clk   (wr_clk),
         .wr_rst_n (fifo_if_inst.wr_rst_n),
         .wr_en    (fifo_if_inst.wr_en),
         .wr_data  (fifo_if_inst.wr_data),
         .full     (fifo_if_inst.full),
 
-        // Read domain
         .rd_clk   (rd_clk),
         .rd_rst_n (fifo_if_inst.rd_rst_n),
         .rd_en    (fifo_if_inst.rd_en),
@@ -47,16 +45,20 @@ module tb_top;
         .empty    (fifo_if_inst.empty)
     );
 
+    // Assertions instantiation
+    fifo_assertions assertions_i (
+        .vif(fifo_if_inst)
+    );
+
     // UVM configuration & start
     initial begin
-        // Make interface available to UVM
         uvm_config_db#(virtual fifo_if)::set(
             null, "*", "vif", fifo_if_inst
         );
 
-        // Start UVM test
         run_test("fifo_test");
     end
 
 endmodule
+
 
