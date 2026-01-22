@@ -17,10 +17,9 @@ interface fifo_if #(
     logic [DATA_WIDTH-1:0] rd_data;
     logic                  empty;
 
-    // Clocking blocks
-
     // Write clocking block
     clocking wr_cb @(posedge wr_clk);
+        output wr_rst_n;
         output wr_en;
         output wr_data;
         input  full;
@@ -28,10 +27,10 @@ interface fifo_if #(
 
     // Read clocking block
     clocking rd_cb @(posedge rd_clk);
+        output rd_rst_n;
         output rd_en;
         input  rd_data;
         input  empty;
     endclocking
 
 endinterface
-
