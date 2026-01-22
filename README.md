@@ -19,11 +19,11 @@ clock domains and uses Gray-code pointers for safe clock-domain crossing.
 ## Verification
 -Built using UVM
 -Includes:
-   -Driver for read/write operations
-   -Monitor to observe FIFO behavior
-   -Scoreboard for data checking
-   -Assertions to catch illegal operations
-   -Functional coverage for test tracking
+-Driver for read/write operations
+-Monitor to observe FIFO behavior
+-Scoreboard for data checking
+-Assertions to catch illegal operations
+-Functional coverage for test tracking
    
 ## Test Cases
 -Simple write and read test
