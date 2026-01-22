@@ -4,7 +4,7 @@ module fifo_assertions (fifo_if vif);
   property no_write_when_full;
     @(posedge vif.wr_clk)
       disable iff (!vif.wr_rst_n)
-      !(vif.wr_en && vif.full);
+      !(vif.wr_cb.wr_en && vif.wr_cb.full);
   endproperty
 
   assert_no_write_when_full: assert property (no_write_when_full)
@@ -14,11 +14,12 @@ module fifo_assertions (fifo_if vif);
   property no_read_when_empty;
     @(posedge vif.rd_clk)
       disable iff (!vif.rd_rst_n)
-      !(vif.rd_en && vif.empty);
+      !(vif.rd_cb.rd_en && vif.rd_cb.empty);
   endproperty
 
   assert_no_read_when_empty: assert property (no_read_when_empty)
     else $error("ASSERTION FAILED: Read when FIFO is EMPTY");
 
-endmodule
+endmodule : fifo_assertions
+
 
