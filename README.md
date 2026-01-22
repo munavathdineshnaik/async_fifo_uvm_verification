@@ -17,17 +17,17 @@ clock domains and uses Gray-code pointers for safe clock-domain crossing.
 - Functional coverage
 
 ## Verification
--Built using UVM
--Includes:
--Driver for read/write operations
--Monitor to observe FIFO behavior
--Scoreboard for data checking
--Assertions to catch illegal operations
--Functional coverage for test tracking
+- Built using UVM
+- Includes: 
+   - Driver for read/write operations
+   - Monitor to observe FIFO behavior
+   - Scoreboard for data checking
+   - Assertions to catch illegal operations
+   - Functional coverage for test tracking
    
 ## Test Cases
--Simple write and read test
--Random stress test with asynchronous activity
+- Simple write and read test
+- Random stress test with asynchronous activity
 
 
 
