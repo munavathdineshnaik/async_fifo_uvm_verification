@@ -1,7 +1,7 @@
 class fifo_stress_sequence extends uvm_sequence #(fifo_transaction);
+
     `uvm_object_utils(fifo_stress_sequence)
 
-    // Number of transactions to generate
     rand int unsigned num_ops;
 
     constraint ops_range {
@@ -16,22 +16,17 @@ class fifo_stress_sequence extends uvm_sequence #(fifo_transaction);
         fifo_transaction tr;
 
         // Randomize number of operations
-        if (!randomize()) begin
-            `uvm_fatal("SEQ", "Failed to randomize stress sequence")
-        end
+        assert(this.randomize());
 
         repeat (num_ops) begin
             tr = fifo_transaction::type_id::create("tr");
 
-            // Randomize transaction fields
-            if (!tr.randomize()) begin
-                `uvm_error("SEQ", "Transaction randomization failed")
-            end
-
             start_item(tr);
+            assert(tr.randomize());
             finish_item(tr);
         end
     endtask
 
 endclass
+
 
