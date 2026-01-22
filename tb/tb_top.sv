@@ -1,5 +1,9 @@
 `timescale 1ns/1ps
 
+`include "fifo_if.sv"
+`include "fifo_assertions.sv"
+`include "fifo_test.sv"
+
 module tb_top;
 
     // Parameters
