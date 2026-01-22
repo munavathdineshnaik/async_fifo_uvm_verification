@@ -1,5 +1,6 @@
 class fifo_base_sequence extends uvm_sequence #(fifo_transaction);
-   `uvm_object_utils(fifo_base_sequence)
+
+    `uvm_object_utils(fifo_base_sequence)
 
     function new(string name = "fifo_base_sequence");
         super.new(name);
@@ -11,22 +12,26 @@ class fifo_base_sequence extends uvm_sequence #(fifo_transaction);
         // Write phase
         repeat (8) begin
             tr = fifo_transaction::type_id::create("tr");
-            tr.write_en   = 1;
-            tr.read_en    = 0;
-            tr.write_data = $random;
             start_item(tr);
+            assert(tr.randomize() with {
+                write_en == 1;
+                read_en  == 0;
+            });
             finish_item(tr);
         end
 
         // Read phase
         repeat (8) begin
             tr = fifo_transaction::type_id::create("tr");
-            tr.write_en = 0;
-            tr.read_en  = 1;
             start_item(tr);
+            assert(tr.randomize() with {
+                write_en == 0;
+                read_en  == 1;
+            });
             finish_item(tr);
         end
     endtask
 
-endclass
+endclass : fifo_base_sequence
+
 
