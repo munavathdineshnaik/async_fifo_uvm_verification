@@ -9,12 +9,12 @@ clock domains and uses Gray-code pointers for safe clock-domain crossing.
 - ModelSim / Questa / Xcelium / Verilator
 
 ## FIFO DESIGN
-  - Dual-clock asynchronous FIFO
-  - Gray-code pointer synchronization
-  - UVM-based verification environment
-  - Constrained random stimulus
-  - Assertions for CDC correctness
-  - Functional coverage
+- Dual-clock asynchronous FIFO
+- Gray-code pointer synchronization
+- UVM-based verification environment
+- Constrained random stimulus
+- Assertions for CDC correctness
+- Functional coverage
 
 ## Verification
 -Built using UVM
