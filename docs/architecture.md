@@ -50,7 +50,6 @@ This allows read and write operations to happen independently.
   - Track the current read and write positions
 - An extra MSB bit is added to detect wrap-around conditions
 
----
 
 ### 5.2 Gray Code Pointers
 
@@ -88,7 +87,6 @@ The FIFO is considered **empty** when:
 
 This indicates that no data is available to read.
 
----
 
 ### Full Condition
 
@@ -110,7 +108,6 @@ This is detected by:
   - FIFO is not full
 - Write pointer increments after each successful write
 
----
 
 ### Read Operation
 
