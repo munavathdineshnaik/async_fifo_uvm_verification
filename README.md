@@ -1,38 +1,28 @@
-# Asynchronous FIFO Verification using UVM
-This project focuses on the RTL design of a parameterized asynchronous FIFO with robust CDC handling. 
+# Asynchronous FIFO – RTL Design with UVM-Based Verification
+
+This project focuses on the RTL design of a parameterized asynchronous FIFO with robust CDC handling.
 A comprehensive SystemVerilog/UVM-based verification environment is included to validate the RTL design.
 
 ## Tools
-- SystemVerilog
-- UVM
+- SystemVerilog (RTL + Assertions)
+- UVM (Verification)
 - ModelSim / Questa / Xcelium / Verilator
 
-## FIFO RTL DESIGN
+## RTL FIFO Design
 - Dual-clock asynchronous FIFO
-- Gray-code pointer synchronization
-- UVM-based verification environment
-- Constrained random stimulus
-- Assertions for CDC correctness
-- Functional coverage
+- Gray-code pointer synchronization for CDC safety
 - Reset-safe design across clock domains
 - Full/empty detection using MSB comparison
+- Synthesizable SystemVerilog RTL
 
-## Verification
-- Built using UVM
-- Includes: 
-   - Driver for read/write operations
-   - Monitor to observe FIFO behavior
-   - Scoreboard for data checking
-   - Assertions to catch illegal operations
-   - Functional coverage for test tracking
-- Directed and constrained-random testing
-- SystemVerilog Assertions for safety checks
-- Functional coverage for FIFO states
+## Verification 
+- UVM-based verification environment
+- Constrained-random read/write stimulus
+- Driver, monitor, and scoreboard architecture
+- SystemVerilog Assertions to catch illegal operations
+- Functional coverage to track FIFO states
 - Reset and CDC corner-case validation
 
 ## Test Cases
-- Simple write and read test
-- Random stress test with asynchronous activity
-
-
-
+- Simple directed write/read test
+- Random stress testing with asynchronous activity
