@@ -14,8 +14,8 @@ A comprehensive SystemVerilog/UVM-based verification environment is included to 
 - Constrained random stimulus
 - Assertions for CDC correctness
 - Functional coverage
-- Full/empty logic based on pointer comparison
 - Reset-safe design across clock domains
+- Full/empty detection using MSB comparison
 
 ## Verification
 - Built using UVM
