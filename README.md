@@ -1,7 +1,6 @@
 # Asynchronous FIFO Verification using UVM
-This project implements and verifies an asynchronous FIFO using a UVM-based
-verification environment. The FIFO operates across independent read and write
-clock domains and uses Gray-code pointers for safe clock-domain crossing.
+This project focuses on the RTL design of a parameterized asynchronous FIFO with robust CDC handling. 
+A comprehensive SystemVerilog/UVM-based verification environment is included to validate the RTL design.
 
 ## Tools
 - SystemVerilog
